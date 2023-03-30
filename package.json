@@ -1,0 +1,33 @@
+{
+  "name": "project-4",
+  "version": "1.0.0",
+  "description": "![image](https://camo.githubusercontent.com/c7cd26def93db19affeb8c6af3009fd15720ce38f6259e730699a305c676a820/68747470733a2f2f7777772e66726565636f646563616d702e6f72672f6e6577732f636f6e74656e742f696d616765732f73697a652f77323030302f323032302f30332f5045524e2e706e67)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QueenlyCrimson/Project-4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QueenlyCrimson/Project-4/issues"
+  },
+  "homepage": "https://github.com/QueenlyCrimson/Project-4#readme",
+  "dependencies": {
+    "@ngneat/falso": "^6.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "node": "^19.8.1",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
+    "sequelize": "^6.30.0"
+  }
+}

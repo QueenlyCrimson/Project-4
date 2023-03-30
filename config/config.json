@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "erin",
+    "password": "1234",
+    "database": "lantern_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "erin",
+    "password": "1234",
+    "database": "lantern_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "erin",
+    "password": "1234",
+    "database": "lantern_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
