@@ -19,6 +19,11 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   console.log(`user with an id of ${socket.id} has connected!`);
+
+  socket.on("send_message", (data) => {
+    console.log(data);
+    socket.broadcast.emit("receive_message", data);
+  });
 });
 
 const PORT = process.env.PORT || 3001;
