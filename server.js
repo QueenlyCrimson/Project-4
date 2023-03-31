@@ -1,8 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const ServerRouter = require("./routes/ServerRouter");
+const WebSocket = require("ws");
 
 const app = express();
+const wss = new WebSocket.Server({ port: 8082 });
+
+wss.on("connection", (ws) => {
+  //this will run on connection
+  console.log("New Client Connected!");
+
+  ws.on("close", () => {
+    console.log("Client has disconnected!");
+  });
+});
 
 const PORT = process.env.PORT || 3001;
 

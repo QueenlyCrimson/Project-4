@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const ws = new WebSocket("ws://localhost:8082");
+
+  ws.addEventListener("open", () => {
+    console.log("We are connected");
+  });
+
   return (
     <div className="App">
       <header className="App-header">
