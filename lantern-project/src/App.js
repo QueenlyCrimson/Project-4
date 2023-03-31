@@ -1,35 +1,18 @@
-import logo from "./logo.svg";
+import io from "socket.io-client";
+
 import "./App.css";
 
+const socket = io.connect("http://localhost:3001");
+
 function App() {
-  const ws = new WebSocket("ws://localhost:8082");
-
-  ws.addEventListener("open", () => {
-    console.log("We are connected");
-
-    ws.send("hey guys whats up");
-  });
-
-  ws.addEventListener("message", (e) => {
-    console.log(e.data);
-  });
+  const sendMessage = () => {
+    socket.emit();
+  };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input placeholder="Message" />
+      <button onClick={sendMessage}>Send</button>
     </div>
   );
 }

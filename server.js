@@ -1,24 +1,24 @@
 const express = require("express");
 const cors = require("cors");
-const ServerRouter = require("./routes/ServerRouter");
-const WebSocket = require("ws");
-
 const app = express();
-const wss = new WebSocket.Server({ port: 8082 });
+const ServerRouter = require("./routes/ServerRouter");
+const { isObject } = require("util");
 
-wss.on("connection", (ws) => {
-  //this will run on connection
-  console.log("New Client Connected!");
+const http = require("http");
 
-  ws.on("message", (data) => {
-    console.log(`Client has sent us: ${data}`);
+const server = http.createServer(app);
 
-    ws.send(data);
-  });
+const { Server } = require("socket.io");
 
-  ws.on("close", () => {
-    console.log("Client has disconnected!");
-  });
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  console.log(`user with an id of ${socket.id} has connected!`);
 });
 
 const PORT = process.env.PORT || 3001;
@@ -29,4 +29,27 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/server", ServerRouter);
 
-app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`));
+server.listen(3001, () => {
+  console.log(`Server is running on the port ${PORT}`);
+});
+
+// app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`));
+
+// const wss = new WebSocket.Server({ port: 8082 });
+
+// wss.on("connection", (ws) => {
+//   //this will run on connection
+//   console.log("New Client Connected!");
+
+//   ws.on("message", (data) => {
+//     console.log(`Client has sent us: ${data}`);
+
+//     let res = data.toString().toUpperCase();
+
+//     ws.send(res);
+//   });
+
+//   ws.on("close", () => {
+//     console.log("Client has disconnected!");
+//   });
+// });
