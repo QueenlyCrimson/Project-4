@@ -10,6 +10,12 @@ wss.on("connection", (ws) => {
   //this will run on connection
   console.log("New Client Connected!");
 
+  ws.on("message", (data) => {
+    console.log(`Client has sent us: ${data}`);
+
+    ws.send(data);
+  });
+
   ws.on("close", () => {
     console.log("Client has disconnected!");
   });

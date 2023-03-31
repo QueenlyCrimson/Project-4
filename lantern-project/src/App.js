@@ -6,6 +6,12 @@ function App() {
 
   ws.addEventListener("open", () => {
     console.log("We are connected");
+
+    ws.send("hey guys whats up");
+  });
+
+  ws.addEventListener("message", (e) => {
+    console.log(e.data);
   });
 
   return (

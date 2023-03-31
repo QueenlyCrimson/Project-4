@@ -23,3 +23,5 @@ In this app you'll be able to chat with other people and play minigames with the
 [Trello](https://trello.com/b/bAR0Nqzt/unit-4-project)
 
 [Component Hierarchy Diagram](https://app.diagrams.net/#G1dpT7mL2TW3GYhhmXCSoFPP6tPa3ZX_so)
+
+credits https://www.youtube.com/watch?v=FduLSXEHLng
