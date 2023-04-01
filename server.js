@@ -20,9 +20,13 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log(`user with an id of ${socket.id} has connected!`);
 
+  socket.on("join_room", (data) => {
+    socket.join(data);
+  });
+
   socket.on("send_message", (data) => {
     console.log(data);
-    socket.broadcast.emit("receive_message", data);
+    socket.to(data.room).emit("receive_message", data);
   });
 });
 
@@ -37,24 +41,3 @@ app.use("/server", ServerRouter);
 server.listen(3001, () => {
   console.log(`Server is running on the port ${PORT}`);
 });
-
-// app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`));
-
-// const wss = new WebSocket.Server({ port: 8082 });
-
-// wss.on("connection", (ws) => {
-//   //this will run on connection
-//   console.log("New Client Connected!");
-
-//   ws.on("message", (data) => {
-//     console.log(`Client has sent us: ${data}`);
-
-//     let res = data.toString().toUpperCase();
-
-//     ws.send(res);
-//   });
-
-//   ws.on("close", () => {
-//     console.log("Client has disconnected!");
-//   });
-// });
