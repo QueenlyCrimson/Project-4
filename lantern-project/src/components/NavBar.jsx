@@ -32,7 +32,7 @@ const NavBar = ({ user, handleLogOut }) => {
         <ul className=''>
           <li className=''><Link to="/">Home</Link></li>
           <li className=''><Link to="/makeProfile">Register</Link></li>
-          <li><Link>Sign In</Link></li>
+          <li><Link to="/signIn" >Sign In</Link></li>
           <li className=''><Link to="/about">About</Link></li>
           
         </ul>

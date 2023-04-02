@@ -1,7 +1,7 @@
-import { SignInUser, getUserInfo } from '../services/Auth'
+ import { SignInUser, getUserInfo } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import Client from '../services/api'
+ import Client from '../services/api'
 
 const SignIn = ({ setUser, setUserInfo }) => {
 
@@ -37,26 +37,26 @@ const SignIn = ({ setUser, setUserInfo }) => {
 
 
   return (
-    <div className='h-screen'>
-      <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md space-y-8">
+    <div className=''>
+      <div className="">
+        <div className="">
           <div>
             <img
-              className="mx-auto h-20 w-auto"
+              className=""
               src="https://i.postimg.cc/W3PR3CyB/TAVERN-logo.png"
-              alt="Tavern"
+              alt=""
             />
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white">
+            <h2 className="">
               Sign in to your account
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
+            <p className="">
               Or{' '}
-              <a href="/makeProfile" className="font-medium text-orange-600 hover:text-white">
+              <a href="/makeProfile" className="">
                 create a new account
               </a>
             </p>
           </div>
-          <form className="mt-8 space-y-6">
+          <form className="">
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
@@ -120,7 +120,7 @@ const SignIn = ({ setUser, setUserInfo }) => {
                 className="group relative flex w-full justify-center rounded-md bg-orange-500 py-2 px-3 text-sm font-semibold text-white hover:bg-orange-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockClosedIcon className="h-5 w-5 text-white group-hover:text-gray-700" aria-hidden="true" />
+                  {/* <LockClosedIcon className="h-5 w-5 text-white group-hover:text-gray-700" aria-hidden="true" /> */}
                 </span>
                 Sign in
               </button>

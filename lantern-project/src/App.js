@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import Messaging from "./components/Messaging";
 import Home from "./pages/Home";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import SignIn from "./components/SignIn";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -37,7 +38,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Home user={user} />
+        <Route index element={<Home user={user} />} />
+        <Route path="/signIn" element={<SignIn />} />
       </Routes>
     </div>
   );
