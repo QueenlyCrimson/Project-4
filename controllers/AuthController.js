@@ -5,7 +5,7 @@ const Register = async (req, res) => {
   try {
     const { email, password, name, userName } = req.body;
     let passwordDigest = await middleware.hashPassword(password);
-    const data = await User.create({ email, passwordDigest, name, userName });
+    const data = await User.create({ email, password, profilePic, userame });
     res.send(data);
   } catch (error) {
     throw error;
@@ -19,14 +19,11 @@ const Login = async (req, res) => {
       where: { email: email },
       raw: true,
     });
-    let matched = await middleware.comparePassword(
-      data.passwordDigest,
-      password
-    );
+    let matched = await middleware.comparePassword(data.password, password);
     if (matched) {
       let payload = {
         email: data.email,
-        password: data.passwordDigest,
+        password: data.password,
       };
 
       let token = middleware.createTokenExpiring(payload);

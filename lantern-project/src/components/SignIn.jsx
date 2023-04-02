@@ -17,9 +17,9 @@ const SignIn = ({ setUser, setUserInfo }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
+    setUser(payload)
     setFormValues({initialState})
     // await getUserInfo(payload)
-    setUser(payload)
     // const res = await Client.get(`/user/get_user/by_email/${payload.email}`)
     navigate('/')
   }
