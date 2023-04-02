@@ -39,7 +39,10 @@ function App() {
       <NavBar />
       <Routes>
         <Route index element={<Home user={user} />} />
-        <Route path="/signIn" element={<SignIn />} />
+        <Route
+          path="/signIn"
+          element={<SignIn user={user} setUser={setUser} />}
+        />
       </Routes>
     </div>
   );
