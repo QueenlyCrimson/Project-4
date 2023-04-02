@@ -17,4 +17,4 @@ router.get(
   controller.CheckSession
 );
 
-module.exports = AuthRouter;
+module.exports = router;
