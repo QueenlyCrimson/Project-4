@@ -19,7 +19,7 @@ module.exports = {
         allowNull: false,
         // validate: { isEmail: true },
       },
-      passwordDigest: {
+      password: {
         type: Sequelize.STRING,
         allowNull: false,
       },
