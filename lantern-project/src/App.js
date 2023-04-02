@@ -4,6 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Messaging from "./components/Messaging";
 import Home from "./pages/Home";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -36,7 +37,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Home />
+        <Home user={user} />
       </Routes>
     </div>
   );
