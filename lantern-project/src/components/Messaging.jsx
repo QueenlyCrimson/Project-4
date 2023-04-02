@@ -1,12 +1,7 @@
-import io from "socket.io-client";
 import { useEffect, useState } from "react";
-import "./App.css";
-import NavBar from "./components/NavBar";
-import Messaging from "./components/Messaging";
+import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:3001");
-
-function App() {
+const Messaging = ({ socket }) => {
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
   const [messageReceived, setMessageReceived] = useState("");
@@ -30,12 +25,30 @@ function App() {
     });
   }, [socket]);
 
-  return (
-    <div className="App">
-      <NavBar />
-      <Messaging socket={socket} />
+
+  return(
+    <div>
+      <input
+        placeholder="Room Number..."
+        onChange={(event) => {
+        setRoom(event.target.value);
+      }}
+      />
+      <button onClick={joinRoom}>Join Room</button>
+      <input
+        placeholder="Message"
+        onChange={(event) => {
+        setMessage(event.target.value);
+      }}
+      />
+      <button onClick={sendMessage}>Send</button>
+      <h1>Message:</h1>
+      {messageReceived}
     </div>
-  );
+
+
+  )
 }
 
-export default App;
+
+export default Messaging
