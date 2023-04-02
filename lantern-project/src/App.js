@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Messaging from "./components/Messaging";
+import Home from "./pages/Home";
 
 const socket = io.connect("http://localhost:3001");
 
 function App() {
+  const [user, setUser] = useState(null);
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
   const [messageReceived, setMessageReceived] = useState("");
@@ -33,7 +35,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Messaging socket={socket} />
+      <Routes>
+        <Home />
+      </Routes>
     </div>
   );
 }
