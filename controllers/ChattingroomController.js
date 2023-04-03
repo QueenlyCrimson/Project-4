@@ -9,6 +9,16 @@ const GetChattingrooms = async (req, res) => {
   }
 };
 
+const GetChattingroomsByUserId = async (req, res) => {
+  try {
+    const id = req.params.chattingId;
+    const data = await Chattingroom.findAll({ where: { userId: id } });
+    res.send(data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 const CreateChattingroom = async (req, res) => {
   try {
     let chattingroomBody = {
@@ -23,7 +33,7 @@ const CreateChattingroom = async (req, res) => {
 
 const UpdateChattingroom = async (req, res) => {
   try {
-    const id = parseInt(req.params.chatId);
+    const id = parseInt(req.params.chattingId);
     const updatedChattingroom = req.body;
     let updateChattingroom = await Chattingroom.update(
       {
@@ -40,7 +50,7 @@ const UpdateChattingroom = async (req, res) => {
 
 const DeleteChattingroom = async (req, res) => {
   try {
-    let id = parseInt(req.params.chatId);
+    let id = parseInt(req.params.chattingId);
     await Chattingroom.destroy({ where: { id: id } });
     res.send({ message: `Deleted Chattingroom with a id of ${id}` });
   } catch (error) {
@@ -50,6 +60,7 @@ const DeleteChattingroom = async (req, res) => {
 
 module.exports = {
   GetChattingrooms,
+  GetChattingroomsByUserId,
   CreateChattingroom,
   UpdateChattingroom,
   DeleteChattingroom,
