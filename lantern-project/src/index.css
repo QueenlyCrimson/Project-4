@@ -39,6 +39,7 @@ li {
   height: 80vh;
   background-color: rgb(243, 156, 26);
   left: 15vh;
+  border-radius: 1vh;
 }
 
 .chatrooms {
@@ -47,6 +48,7 @@ li {
   height: 80vh;
   background-color: rgb(243, 156, 26);
   right: 15vh;
+  border-radius: 1vh;
 }
 
 .messages {
@@ -56,5 +58,6 @@ li {
   background-color: rgb(243, 156, 26);
   position: fixed;
   left:30vw;
+  border-radius: 1vh;
 }
 
