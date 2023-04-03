@@ -1,5 +1,5 @@
 
-const ChatRooms = () => {
+const Chatrooms = () => {
 
   return(
     <div className="chatrooms" >
@@ -8,4 +8,4 @@ const ChatRooms = () => {
   )
 }
 
-export default ChatRooms
+export default Chatrooms

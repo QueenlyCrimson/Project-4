@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import Friends from "./Friends";
 import Messages from "./Messages";
-import ChatRooms from "./ChatRooms";
+import Chatrooms from "./Chatrooms";
 
 const Messaging = ({ socket }) => {
   const [room, setRoom] = useState("");
@@ -35,7 +35,7 @@ const Messaging = ({ socket }) => {
     <div>
       <Messages />
       <Friends />
-      <ChatRooms />
+      <Chatrooms />
     </div>
 
 
