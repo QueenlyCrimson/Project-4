@@ -51,4 +51,6 @@ const DeleteChatroom = async (req, res) => {
 module.exports = {
   GetChatrooms,
   CreateChatroom,
+  UpdateChatroom,
+  DeleteChatroom,
 };
