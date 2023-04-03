@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
+import Messages from "./Messages";
 
 const Messaging = ({ socket }) => {
   const [room, setRoom] = useState("");
@@ -30,11 +31,11 @@ const Messaging = ({ socket }) => {
 
   return(
     <div>
-      <div className="messages"></div>
+      <Messages />
       <div className="friends"></div>
-      
-      <div className="chatrooms" ></div>
-      
+      <div className="boxforchats">
+        <div className="chatrooms" ></div>
+      </div>
     </div>
 
 
