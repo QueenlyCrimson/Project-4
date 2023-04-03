@@ -12,7 +12,7 @@ const NavBar = ({ user, handleLogOut }) => {
       <nav>
         <div className=''>
           <h1 className=''>Tavern.</h1>
-          <ul className=''>
+          <ul className='navb'>
             <li className=''><Link to="/feed">Feed</Link></li>
             <li><Link>Sign In</Link></li>
             <li className=''><Link to="/about">About</Link></li>
@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogOut }) => {
     <nav>
       <div className=''>
         <h1 className=''>Lantern</h1>
-        <ul className=''>
+        <ul className='navb'>
           <li className=''><Link to="/">Home</Link></li>
           <li className=''><Link to="/makeProfile">Register</Link></li>
           <li><Link to="/signIn" >Sign In</Link></li>

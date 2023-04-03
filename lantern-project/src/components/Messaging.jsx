@@ -8,28 +8,41 @@ const Messaging = ({ socket }) => {
 
   
 
-  const joinRoom = () => {
-    if (room !== "") {
-      socket.emit("join_room", room);
-    }
-  };
+  // const joinRoom = () => {
+  //   if (room !== "") {
+  //     socket.emit("join_room", room);
+  //   }
+  // };
 
-  const sendMessage = () => {
-    socket.emit("send_message", {
-      message,
-      room,
-    });
-  };
+  // const sendMessage = () => {
+  //   socket.emit("send_message", {
+  //     message,
+  //     room,
+  //   });
+  // };
 
-  useEffect(() => {
-    socket.on(`receive_message`, (data) => {
-      setMessageReceived(data.message);
-    });
-  }, [socket]);
+  // useEffect(() => {
+  //   socket.on(`receive_message`, (data) => {
+  //     setMessageReceived(data.message);
+  //   });
+  // }, [socket]);
 
 
   return(
     <div>
+      <div className="messages"></div>
+      <div className="friends"></div>
+      <div className="chatrooms" ></div>
+    </div>
+
+
+  )
+}
+
+
+export default Messaging
+
+{/* <div>
       <input
         placeholder="Room Number..."
         onChange={(event) => {
@@ -46,11 +59,4 @@ const Messaging = ({ socket }) => {
       <button onClick={sendMessage}>Send</button>
       <h1>Message:</h1>
       {messageReceived}
-    </div>
-
-
-  )
-}
-
-
-export default Messaging
+    </div> */}
