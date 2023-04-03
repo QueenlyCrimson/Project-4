@@ -6,6 +6,8 @@ const Messaging = ({ socket }) => {
   const [message, setMessage] = useState("");
   const [messageReceived, setMessageReceived] = useState("");
 
+  
+
   const joinRoom = () => {
     if (room !== "") {
       socket.emit("join_room", room);

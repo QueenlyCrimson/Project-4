@@ -1,7 +1,7 @@
 import App from '../App'
 import Messaging from '../components/Messaging'
 
-const Home = ({ user }) => {
+const Home = ({ user, socket }) => {
 
 
 
@@ -10,7 +10,8 @@ const Home = ({ user }) => {
 
   return user ? (
     <div>
-      <Messaging />
+       <Messaging socket={socket} /> 
+      <h1>signed in!</h1>
     </div>
   ) : (
     <div>

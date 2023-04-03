@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import MakeProfile from "./pages/MakeProfile";
+import { CheckSession, getUserInfo } from "./services/Auth";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -16,30 +17,42 @@ function App() {
   const [message, setMessage] = useState("");
   const [messageReceived, setMessageReceived] = useState("");
 
-  const joinRoom = () => {
-    if (room !== "") {
-      socket.emit("join_room", room);
-    }
+  const checkToken = async () => {
+    const userCS = await CheckSession();
+    setUser(userCS);
   };
 
-  const sendMessage = () => {
-    socket.emit("send_message", {
-      message,
-      room,
-    });
-  };
+  // const joinRoom = () => {
+  //   if (room !== "") {
+  //     socket.emit("join_room", room);
+  //   }
+  // };
+
+  // const sendMessage = () => {
+  //   socket.emit("send_message", {
+  //     message,
+  //     room,
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   socket.on(`receive_message`, (data) => {
+  //     setMessageReceived(data.message);
+  //   });
+  // }, [socket]);
 
   useEffect(() => {
-    socket.on(`receive_message`, (data) => {
-      setMessageReceived(data.message);
-    });
-  }, [socket]);
+    const token = localStorage.getItem("token");
+    if (token) {
+      checkToken();
+    }
+  }, []);
 
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route index element={<Home user={user} />} />
+        <Route index element={<Home socket={socket} user={user} />} />
         <Route
           path="/signIn"
           element={<SignIn user={user} setUser={setUser} />}
