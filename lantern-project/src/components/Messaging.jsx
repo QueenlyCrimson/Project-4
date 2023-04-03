@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
+import Friends from "./Friends";
 import Messages from "./Messages";
 
 const Messaging = ({ socket }) => {
@@ -32,10 +33,10 @@ const Messaging = ({ socket }) => {
   return(
     <div>
       <Messages />
-      <div className="friends"></div>
-      <div className="boxforchats">
+      <Friends />
+      
         <div className="chatrooms" ></div>
-      </div>
+      
     </div>
 
 

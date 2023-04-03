@@ -3,7 +3,8 @@ const Messages = () => {
 
   return(
     <div className="messages">
-      <div></div>
+      <div className="messageDisplay"></div>
+      <div className="messageInput"></div>
     </div>
   )
 }
