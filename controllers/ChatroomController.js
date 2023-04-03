@@ -32,6 +32,17 @@ const UpdateChatroom = async (req, res) => {
       },
       { where: { id: id } }
     );
+    res.send(updateChatroom);
+  } catch (error) {
+    throw error;
+  }
+};
+
+const DeleteChatroom = async (req, res) => {
+  try {
+    let id = parseInt(req.params.chatId);
+    await Chatroom.destroy({ where: { id: id } });
+    res.send({ message: `Deleted Chatroom with a id of ${id}` });
   } catch (error) {
     throw error;
   }
