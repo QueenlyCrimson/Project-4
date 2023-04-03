@@ -9,12 +9,10 @@ const MakeProfile = () => {
   let navigate = useNavigate()
 
   let initialState = {
-    name: '',
     username: '',
     email: '',
     profilePic: '',
-    password: '',
-    confirmPassword: ''
+    password: ''
   }
 
   const [formValues, setFormValues] = useState(initialState)
@@ -22,9 +20,8 @@ const MakeProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      name: formValues.name,
       username: formValues.username,
-      img: formValues.img,
+      profilePic: formValues.profilePic,
       email: formValues.email,
       password: formValues.password
     })
@@ -46,15 +43,15 @@ const MakeProfile = () => {
                         htmlFor="first-name"
                         className=""
                       >
-                        Name
+                        Profile Picture URL
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        id="name"
-                        value={formValues.name}
+                        name="profilePic"
+                        id="profilePic"
+                        value={formValues.profilePic}
                         onChange={handleChange}
-                        autoComplete="given-name"
+                        autoComplete=""
                         className=""
                       />
                     </div>
@@ -68,8 +65,8 @@ const MakeProfile = () => {
                       </label>
                       <input
                         type="text"
-                        name="userName"
-                        id="userName"
+                        name="username"
+                        id="username"
                         value={formValues.username}
                         onChange={handleChange}
                         autoComplete="family-name"
@@ -82,7 +79,7 @@ const MakeProfile = () => {
                         htmlFor="email-address"
                         className=""
                       >
-                        Email address
+                        Email
                       </label>
                       <input
                         type="text"
@@ -111,23 +108,8 @@ const MakeProfile = () => {
                         className=""
                       />
                     </div>
-                    <div className="">
-                      <label
-                        htmlFor="street-address"
-                        className=""
-                      >
-                        Confirm Password
-                      </label>
-                      <input
-                        type="text"
-                        name="confirmPassword"
-                        id="password"
-                        value={formValues.confirmPassword}
-                        onChange={handleChange}
-                        autoComplete="password"
-                        className=""
-                      />
-                    </div>
+                    
+                      
                   </div>
                 </div>
                 <div className="">

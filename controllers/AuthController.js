@@ -3,9 +3,14 @@ const middleware = require("../middleware");
 
 const Register = async (req, res) => {
   try {
-    const { email, password, name, userName } = req.body;
+    const { email, password, profilePic, username } = req.body;
     let passwordDigest = await middleware.hashPassword(password);
-    const data = await User.create({ email, password, profilePic, userame });
+    const data = await User.create({
+      email,
+      passwordDigest,
+      profilePic,
+      username,
+    });
     res.send(data);
   } catch (error) {
     throw error;
@@ -19,11 +24,14 @@ const Login = async (req, res) => {
       where: { email: email },
       raw: true,
     });
-    let matched = await middleware.comparePassword(data.password, password);
+    let matched = await middleware.comparePassword(
+      data.passwordDigest,
+      password
+    );
     if (matched) {
       let payload = {
         email: data.email,
-        password: data.password,
+        password: data.passwordDigest,
       };
 
       let token = middleware.createTokenExpiring(payload);

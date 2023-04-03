@@ -28,6 +28,11 @@ const createToken = (payload) => {
   return token;
 };
 
+const createTokenExpiring = (payload) => {
+  let token = jwt.sign(payload, APP_SECRET, { expiresIn: "1h" });
+  return token;
+};
+
 const stripToken = (req, res, next) => {
   try {
     const token = req.headers["authorization"].split(" ")[1];
@@ -67,6 +72,7 @@ module.exports = {
   hashPassword,
   comparePassword,
   createToken,
+  createTokenExpiring,
   stripToken,
   verifyToken,
 };
