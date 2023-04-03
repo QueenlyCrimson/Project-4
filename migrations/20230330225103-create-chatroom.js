@@ -9,16 +9,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      username: {
+      name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING,
-      },
-      passwordDigest: {
-        type: Sequelize.STRING,
-      },
-      profilePic: {
+      image: {
         type: Sequelize.STRING,
       },
       createdAt: {

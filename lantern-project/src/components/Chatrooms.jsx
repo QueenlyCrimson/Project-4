@@ -1,11 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { GetChatrooms } from "../services/MessageServices"
 
-const Chatrooms = () => {
+const Chatrooms = ({ user }) => {
   const [chatrooms, setChatrooms] = useState([])
 
   const handleChatrooms = async () => {
-    //PIOCK UP HERE TOMORROW!!!!!!!!
+    const data = await GetChatrooms()
+    setChatrooms(data)
   }
+
+  useEffect(() => {
+    handleChatrooms()
+  }, [user])
 
 
   return(

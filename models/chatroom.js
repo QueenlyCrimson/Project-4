@@ -18,22 +18,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Chatroom.init(
     {
-      username: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      email: {
+      image: {
         type: DataTypes.STRING,
-        unique: true,
-        allowNull: false,
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      profilePic: {
-        type: DataTypes.STRING,
-        allowNull: true,
       },
     },
     {

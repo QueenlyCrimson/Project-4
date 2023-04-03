@@ -13,37 +13,13 @@ module.exports = (sequelize, DataTypes) => {
   }
   Chattingroom.init(
     {
-      userId1: {
+      userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      userId2: {
+      chatId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-      },
-      userId3: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      userId4: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      userId5: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      userId6: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      userId7: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
-      userId8: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
       },
     },
     {

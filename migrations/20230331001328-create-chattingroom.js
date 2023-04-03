@@ -9,37 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      userId1: {
+      userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      userId2: {
+      chatId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-      },
-      userId3: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      userId4: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      userId5: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      userId6: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      userId7: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      userId8: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
       },
       createdAt: {
         allowNull: false,
