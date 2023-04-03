@@ -32,3 +32,29 @@ li {
   border-color: black;
   border-width: 0.2vh;
 }
+
+.friends {
+  position: absolute;
+  width: 20vh;
+  height: 80vh;
+  background-color: rgb(243, 156, 26);
+  left: 15vh;
+}
+
+.chatrooms {
+  position: absolute;
+  width: 20vh;
+  height: 80vh;
+  background-color: rgb(243, 156, 26);
+  right: 15vh;
+}
+
+.messages {
+  
+  width: 40vw;
+  height: 40vw;
+  background-color: rgb(243, 156, 26);
+  position: fixed;
+  left:30vw;
+}
+

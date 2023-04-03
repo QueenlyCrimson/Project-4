@@ -32,7 +32,9 @@ const Messaging = ({ socket }) => {
     <div>
       <div className="messages"></div>
       <div className="friends"></div>
+      
       <div className="chatrooms" ></div>
+      
     </div>
 
 

@@ -10,8 +10,9 @@ const Home = ({ user, socket }) => {
 
   return user ? (
     <div>
+      <h1> </h1>
        <Messaging socket={socket} /> 
-      <h1>signed in!</h1>
+      
     </div>
   ) : (
     <div>
