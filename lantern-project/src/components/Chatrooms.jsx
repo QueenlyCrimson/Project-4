@@ -3,6 +3,7 @@ import { GetChatrooms } from "../services/MessageServices"
 
 const Chatrooms = ({ user }) => {
   const [chatrooms, setChatrooms] = useState([])
+  const [chattingrooms, setChattingrooms] = useState([])
 
   const handleChatrooms = async () => {
     const data = await GetChatrooms()
