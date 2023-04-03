@@ -6,6 +6,7 @@ import Messaging from "./components/Messaging";
 import Home from "./pages/Home";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import SignIn from "./components/SignIn";
+import MakeProfile from "./pages/MakeProfile";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -43,6 +44,7 @@ function App() {
           path="/signIn"
           element={<SignIn user={user} setUser={setUser} />}
         />
+        <Route path="/makeProfile" element={<MakeProfile />} />
       </Routes>
     </div>
   );
