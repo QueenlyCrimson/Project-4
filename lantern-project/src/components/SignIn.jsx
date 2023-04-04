@@ -42,11 +42,7 @@ const SignIn = ({ setUser, setUserInfo }) => {
       <div className="">
         <div className="">
           <div>
-            <img
-              className=""
-              src="https://i.postimg.cc/W3PR3CyB/TAVERN-logo.png"
-              alt=""
-            />
+            
             <h2 className="">
               Sign in to your account
             </h2>
