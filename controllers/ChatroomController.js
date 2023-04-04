@@ -9,6 +9,16 @@ const GetChatrooms = async (req, res) => {
   }
 };
 
+const GetChatroomById = async (req, res) => {
+  try {
+    const id = req.params.chatId;
+    const data = await Chatroom.findByPk(id);
+    res.send(data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 const CreateChatroom = async (req, res) => {
   try {
     let chatroomBody = {
@@ -50,6 +60,7 @@ const DeleteChatroom = async (req, res) => {
 
 module.exports = {
   GetChatrooms,
+  GetChatroomById,
   CreateChatroom,
   UpdateChatroom,
   DeleteChatroom,
