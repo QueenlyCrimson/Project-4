@@ -4,8 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import Client from "../services/api"
 
-const UpdateProfile = () => {
-  let { id } = useParams()
+const UpdateProfile = ({ userInfo }) => {
+
+  console.log(userInfo)
+  
+  let id = userInfo.id
 
   let navigate = useNavigate()
 
@@ -19,6 +22,7 @@ const UpdateProfile = () => {
 
   const getUserById = async () => {
     const res = await Client.get(`/user/get_user/${id}`)
+    console.log(res)
     setFormValues(res.data)
   }
 

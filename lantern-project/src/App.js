@@ -73,7 +73,10 @@ function App() {
           }
         />
         <Route path="/makeProfile" element={<MakeProfile />} />
-        <Route path="/updateProfile" element={<UpdateProfile />} />
+        <Route
+          path="/updateProfile"
+          element={<UpdateProfile userInfo={userInfo} />}
+        />
       </Routes>
     </div>
   );
