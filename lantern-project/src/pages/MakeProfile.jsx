@@ -3,7 +3,7 @@ import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
-// import MakePost from "../components/MakePost"
+
 
 const MakeProfile = () => {
   let navigate = useNavigate()
