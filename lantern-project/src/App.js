@@ -18,6 +18,7 @@ function App() {
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
   const [messageReceived, setMessageReceived] = useState("");
+  let navigate = useNavigate();
 
   const checkToken = async () => {
     const userCS = await CheckSession();
