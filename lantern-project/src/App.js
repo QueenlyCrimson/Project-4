@@ -54,9 +54,15 @@ function App() {
     console.log(user);
   }, [user]);
 
+  const handleLogOut = () => {
+    setUser(null);
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
     <div className="App">
-      <NavBar user={user} />
+      <NavBar user={user} handleLogOut={handleLogOut} />
       <Routes>
         <Route index element={<Home socket={socket} user={user} />} />
         <Route
