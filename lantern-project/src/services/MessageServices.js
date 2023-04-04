@@ -2,8 +2,8 @@ import Client from "./api";
 
 export const GetChatrooms = async () => {
   try {
-    const res = await Client.get("/post/get_posts");
-    return res.data;
+    // const res = await Client.get("/post/get_posts");
+    // return res.data;
   } catch (error) {
     throw error;
   }
