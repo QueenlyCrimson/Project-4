@@ -18,6 +18,7 @@ const SignIn = ({ setUser, setUserInfo }) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
     setUser(payload)
+    setUserInfo(res.data)
     setFormValues({initialState})
     // await getUserInfo(payload)
     // const res = await Client.get(`/user/get_user/by_email/${payload.email}`)

@@ -14,6 +14,7 @@ const socket = io.connect("http://localhost:3001");
 
 function App() {
   const [user, setUser] = useState(null);
+  const [userInfo, setUserInfo] = useState({});
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
   const [messageReceived, setMessageReceived] = useState("");
@@ -60,10 +61,12 @@ function App() {
         <Route index element={<Home socket={socket} user={user} />} />
         <Route
           path="/signIn"
-          element={<SignIn user={user} setUser={setUser} />}
+          element={
+            <SignIn user={user} setUser={setUser} setUserInfo={setUserInfo} />
+          }
         />
         <Route path="/makeProfile" element={<MakeProfile />} />
-        <Route path="/updateProfile/:id" element={<UpdateProfile />} />
+        <Route path="/updateProfile" element={<UpdateProfile />} />
       </Routes>
     </div>
   );
