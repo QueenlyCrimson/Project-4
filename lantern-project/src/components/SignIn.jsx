@@ -23,8 +23,7 @@ const SignIn = ({ setUser, setUserInfo }) => {
     console.log(res.data)
     setUserInfo(res.data)
     setFormValues({initialState})
-    // await getUserInfo(payload)
-    // const res = await Client.get(`/user/get_user/by_email/${payload.email}`)
+   
     navigate('/')
   }
 
