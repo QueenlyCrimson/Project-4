@@ -75,7 +75,9 @@ function App() {
         <Route path="/makeProfile" element={<MakeProfile />} />
         <Route
           path="/updateProfile"
-          element={<UpdateProfile userInfo={userInfo} />}
+          element={
+            <UpdateProfile userInfo={userInfo} handleLogOut={handleLogOut} />
+          }
         />
       </Routes>
     </div>

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import Client from "../services/api"
 
-const UpdateProfile = ({ userInfo }) => {
+const UpdateProfile = ({ userInfo, handleLogOut }) => {
 
   console.log(userInfo)
   
@@ -46,6 +46,14 @@ const UpdateProfile = ({ userInfo }) => {
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
+
+  const handleDelete = async (event) => {
+    event.preventDefault()
+    handleLogOut()
+    await Client.delete(`user/delete_user/${userInfo.id}`)
+    alert(`User's account has been deleted.`)
+    navigate('/makeProfile')
   }
 
   return (
