@@ -14,4 +14,10 @@ const UpdateProfile = () => {
     email: '',
     profilePic: '',
   }
+
+  const [formValues, setFormValues] = useState(initialState)
+
+  const getUserById = async () => {
+    const res = await Client.get(`/user/get_user/${id}`)
+  }
 }
