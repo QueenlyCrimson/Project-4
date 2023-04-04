@@ -52,7 +52,7 @@ const DeleteChattingroom = async (req, res) => {
   try {
     let id = parseInt(req.params.chattingId);
     await Chattingroom.destroy({ where: { id: id } });
-    res.send({ message: `Deleted Chattingroom with a id of ${id}` });
+    res.send({ message: `Deleted Chattingroom with an id of ${id}` });
   } catch (error) {
     throw error;
   }

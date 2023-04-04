@@ -42,8 +42,38 @@ const GetUserFriends = async (req, res) => {
   }
 };
 
+const UpdateUser = async (req, res) => {
+  try {
+    const id = parseInt(req.params.user_id);
+    const updatedUser = req.body;
+    let updateUser = await User.update(
+      {
+        username: updatedUser.username,
+        email: updatedUser.email,
+        profilePic: updatedUser.profilePic,
+      },
+      { where: { id: id } }
+    );
+    res.send(updateUser);
+  } catch (error) {
+    throw error;
+  }
+};
+
+const DeleteUser = async (req, res) => {
+  try {
+    let id = parseInt(req.params.user_id);
+    await User.destroy({ where: { id: id } });
+    res.send({ message: `Deleted User with an id of ${id}` });
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   GetAllUsers,
   CreateUser,
   GetUserFriends,
+  UpdateUser,
+  DeleteUser,
 };
