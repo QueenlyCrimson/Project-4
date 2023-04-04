@@ -57,69 +57,74 @@ const UpdateProfile = ({ userInfo, handleLogOut }) => {
   }
 
   return (
-    <div>
-    <form onSubmit={handleSubmit}>
-              <div className="">
+            <div>
+               <form onSubmit={handleSubmit}>
                 <div className="">
                   <div className="">
-
                     <div className="">
-                      <label htmlFor="first-name" className="">
-                        Username
-                      </label>
-                      <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        value={formValues.username}
-                        onChange={handleChange}
-                        autoComplete="username"
-                        className=""
-                      />
-                    </div>
 
-                    <div className="">
-                      <label htmlFor="last-name" className="">
-                        Profile Picture
-                      </label>
-                      <input
-                        type="text"
-                        name="profilePic"
-                        id="profilePic"
-                        value={formValues.profilePic}
-                        onChange={handleChange}
-                        autoComplete="family-name"
-                        className=""
-                      />
-                    </div>
+                      <div className="">
+                        <label htmlFor="first-name" className="">
+                          Username
+                        </label>
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          value={formValues.username}
+                          onChange={handleChange}
+                          autoComplete="username"
+                          className=""
+                        />
+                      </div>
 
-                    <div className="">
-                      <label htmlFor="email-address" className="">
-                        Email address
-                      </label>
-                      <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        value={formValues.email}
-                        onChange={handleChange}
-                        autoComplete="email"
-                        className=""
-                      />
-                    </div>
+                      <div className="">
+                        <label htmlFor="last-name" className="">
+                          Profile Picture
+                        </label>
+                        <input
+                          type="text"
+                          name="profilePic"
+                          id="profilePic"
+                          value={formValues.profilePic}
+                          onChange={handleChange}
+                          autoComplete="family-name"
+                          className=""
+                        />
+                      </div>
 
+                      <div className="">
+                        <label htmlFor="email-address" className="">
+                          Email address
+                        </label>
+                        <input
+                          type="text"
+                          name="email"
+                          id="email"
+                          value={formValues.email}
+                          onChange={handleChange}
+                          autoComplete="email"
+                          className=""
+                        />
+                      </div>
+
+                    </div>
+                  </div>
+                  <div className="">
+                    <button
+                      type="submit"
+                      className=""
+                    >
+                      Update Profile
+                    </button>
                   </div>
                 </div>
-                <div className="">
-                  <button
-                    type="submit"
-                    className=""
-                  >
-                    Update Profile
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+
+              <form onSubmit={handleDelete}>
+                <label>Delete Account</label>
+                <button type="submit">Delete</button>
+              </form>
             </div>
   )
 }
