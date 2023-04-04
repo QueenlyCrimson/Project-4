@@ -20,6 +20,17 @@ const GetUser = async (req, res) => {
   }
 };
 
+const GetUserByEmail = async (req, res) => {
+  try {
+    const email = req.params.email;
+    console.log(email);
+    let data = await User.findOne({ where: { email: email } });
+    res.send(data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 const CreateUser = async (req, res) => {
   try {
     let userBody = {
@@ -83,6 +94,7 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   GetAllUsers,
   GetUser,
+  GetUserByEmail,
   CreateUser,
   GetUserFriends,
   UpdateUser,
