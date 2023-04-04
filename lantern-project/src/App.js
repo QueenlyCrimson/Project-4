@@ -8,6 +8,7 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import MakeProfile from "./pages/MakeProfile";
 import { CheckSession, getUserInfo } from "./services/Auth";
+import UpdateProfile from "./pages/UpdateProfile";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -48,9 +49,13 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <div className="App">
-      <NavBar />
+      <NavBar user={user} />
       <Routes>
         <Route index element={<Home socket={socket} user={user} />} />
         <Route
@@ -58,6 +63,7 @@ function App() {
           element={<SignIn user={user} setUser={setUser} />}
         />
         <Route path="/makeProfile" element={<MakeProfile />} />
+        <Route path="/updateProfile/:id" element={<UpdateProfile />} />
       </Routes>
     </div>
   );
