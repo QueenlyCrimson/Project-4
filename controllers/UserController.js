@@ -10,6 +10,16 @@ const GetAllUsers = async (req, res) => {
   }
 };
 
+const GetUser = async (req, res) => {
+  try {
+    const id = req.params.user_id;
+    let data = await User.findByPk(id);
+    res.send(data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 const CreateUser = async (req, res) => {
   try {
     let userBody = {
@@ -72,6 +82,7 @@ const DeleteUser = async (req, res) => {
 
 module.exports = {
   GetAllUsers,
+  GetUser,
   CreateUser,
   GetUserFriends,
   UpdateUser,
