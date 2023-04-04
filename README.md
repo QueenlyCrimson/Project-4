@@ -16,6 +16,14 @@
 
 In this app you'll be able to chat with other people and play minigames with them! This app will use Web Sockets and PERN stack!
 
+## Screenshots
+
+![image](https://cdn.discordapp.com/attachments/710881503592185867/1092869095067754526/image.png)
+
+![image](https://cdn.discordapp.com/attachments/710881503592185867/1092869146875809883/image.png)
+
+![image](https://cdn.discordapp.com/attachments/710881503592185867/1092869220443885728/image.png)
+
 ## Links
 
 [GitHub](https://github.com/QueenlyCrimson/project-2)

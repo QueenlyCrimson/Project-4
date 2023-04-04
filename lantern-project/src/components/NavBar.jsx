@@ -11,7 +11,7 @@ const NavBar = ({ user, handleLogOut }) => {
     userOptions = (
       <nav>
         <div className=''>
-          <h1 className=''>Tavern.</h1>
+          <h1 className=''>Lantern</h1>
           <ul className='navb'>
             <li className=''><Link to="/">Home</Link></li>
             <li><Link  onClick={handleLogOut}>Sign Out</Link></li>
